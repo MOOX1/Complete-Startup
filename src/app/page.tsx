@@ -27,7 +27,10 @@ export default function Home() {
       <Text.Footer type="Uppercase">
         Hello word Footer Semi bold uppercase
       </Text.Footer>
-      <Button.Primary label="Primary" icon={ActivityIcon} />
+      <Button.Root typeButton="Primary">
+        <Button.Label> Primary </Button.Label>
+        <Button.Icon icon={ActivityIcon} />
+      </Button.Root>
     </div>
   );
 }

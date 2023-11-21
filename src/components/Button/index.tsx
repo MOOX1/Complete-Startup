@@ -1,5 +1,9 @@
-import { Primary } from './Primary';
+import { Label } from './Label';
+import { Root } from './Root';
+import { Icon } from './Icon';
 
 export const Button = {
-  Primary,
+  Root,
+  Label,
+  Icon,
 };
