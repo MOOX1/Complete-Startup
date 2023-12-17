@@ -4,7 +4,7 @@ import { ActivityIcon } from 'lucide-react';
 
 export default function Home() {
   return (
-    <div>
+    <div className="p-5">
       <Text.Heading type="H1">hello word H1 </Text.Heading>
       <Text.Heading type="H2">hello word H2 </Text.Heading>
       <Text.Heading type="H3">hello word H3 </Text.Heading>
@@ -27,10 +27,40 @@ export default function Home() {
       <Text.Footer type="Uppercase">
         Hello word Footer Semi bold uppercase
       </Text.Footer>
-      <Button.Root typeButton="Primary">
-        <Button.Label> Primary </Button.Label>
-        <Button.Icon icon={ActivityIcon} />
-      </Button.Root>
+      <div className="flex w-1/4 flex-col gap-3">
+        <Button.Root typeButton="Primary">
+          <Button.Label> Primary </Button.Label>
+          <Button.Icon icon={ActivityIcon} />
+        </Button.Root>
+
+        <Button.Root typeButton="secondary">
+          <Button.Label> Secondary </Button.Label>
+          <Button.Icon icon={ActivityIcon} />
+        </Button.Root>
+
+        <Button.Root typeButton="secondary" disable>
+          <Button.Icon icon={ActivityIcon} />
+          <Button.Label> Disable </Button.Label>
+        </Button.Root>
+
+        <Button.Root typeButton="success-primary">
+          <Button.Label> Success primary </Button.Label>
+          <Button.Icon icon={ActivityIcon} />
+        </Button.Root>
+        <Button.Root typeButton="success-secondary">
+          <Button.Label> Success Secondary </Button.Label>
+          <Button.Icon icon={ActivityIcon} />
+        </Button.Root>
+
+        <Button.Root typeButton="danger-primary">
+          <Button.Label> Danger primary </Button.Label>
+          <Button.Icon icon={ActivityIcon} />
+        </Button.Root>
+        <Button.Root typeButton="danger-secondary">
+          <Button.Label> Danger secondary </Button.Label>
+          <Button.Icon icon={ActivityIcon} />
+        </Button.Root>
+      </div>
     </div>
   );
 }

@@ -1,15 +1,21 @@
-import type { Config } from 'tailwindcss';
-
-const config: Config = {
-  content: ['./src/**/*.{js,ts,jsx,tsx,mdx}'],
-
+/** @type {import('tailwindcss').Config} */
+module.exports = {
+  darkMode: ['class'],
+  content: [
+    './pages/**/*.{ts,tsx}',
+    './components/**/*.{ts,tsx}',
+    './app/**/*.{ts,tsx}',
+    './src/**/*.{ts,tsx}',
+  ],
   theme: {
     backgroundColor: {
       interactive: {
-        success: '#d4edda',
+        successDefault: '#d4edda',
         danger: '#f8d7da',
         warning: '#fff3cd',
         info: '#d1ecf1',
+        success: '#28a745',
+        'danger-default': '#DC3545',
       },
       black: {
         '100': '#383838',
@@ -64,6 +70,12 @@ const config: Config = {
       },
     },
     colors: {
+      interactive: {
+        success: '#28a745',
+        warning: '#ffc107',
+        danger: '#dc3545',
+        info: '#17a2b8',
+      },
       white: {
         '100': '#e4e6e3',
         '200': '#caccca',
@@ -388,7 +400,8 @@ const config: Config = {
       },
     },
   },
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  plugins: [require('@tailwindcss/typography')({ className: 'typography' })],
+  plugins: [
+    require('tailwindcss-animate'),
+    require('@tailwindcss/typography')({ className: 'typography' }),
+  ],
 };
-export default config;

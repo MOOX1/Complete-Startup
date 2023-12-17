@@ -2,6 +2,8 @@ import type { Metadata } from 'next';
 import { Inter, Poppins, Rubik } from 'next/font/google';
 import './globals.css';
 
+import { Layout } from '@/components/Layout';
+
 const inter = Inter({
   subsets: ['latin'],
   display: 'swap',
@@ -30,9 +32,19 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${poppins.variable} ${rubik.variable}`}
+      className={`${inter.variable} ${poppins.variable} ${rubik.variable} dark`}
     >
-      <body className={inter.className}>{children}</body>
+      <body
+        className={
+          inter.className +
+          ' bg-white-default dark:bg-black-default dark:text-white-default'
+        }
+      >
+        <Layout.Root hasHeader>
+          <Layout.Header />
+          {children}
+        </Layout.Root>
+      </body>
     </html>
   );
 }
