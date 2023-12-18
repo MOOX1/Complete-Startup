@@ -1,6 +1,7 @@
 import type { Metadata } from 'next';
 import { Inter, Poppins, Rubik } from 'next/font/google';
 import './globals.css';
+import { ThemeProvider } from '@/providers/Theme';
 
 import { Layout } from '@/components/Layout';
 
@@ -32,7 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html
       lang="en"
-      className={`${inter.variable} ${poppins.variable} ${rubik.variable} dark`}
+      className={`${inter.variable} ${poppins.variable} ${rubik.variable} `}
     >
       <body
         className={
@@ -40,10 +41,17 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           ' bg-white-default dark:bg-black-default dark:text-white-default'
         }
       >
-        <Layout.Root hasHeader>
-          <Layout.Header />
-          {children}
-        </Layout.Root>
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Layout.Root hasHeader>
+            <Layout.Header />
+            {children}
+          </Layout.Root>
+        </ThemeProvider>
       </body>
     </html>
   );
