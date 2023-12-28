@@ -3,6 +3,7 @@ import { Inter, Poppins, Rubik } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/providers/Theme';
 import { Analytics } from '@vercel/analytics/react';
+import { SpeedInsights } from '@vercel/speed-insights/next';
 
 import { Layout } from '@/components/Layout';
 
@@ -54,6 +55,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           </Layout.Root>
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   );
