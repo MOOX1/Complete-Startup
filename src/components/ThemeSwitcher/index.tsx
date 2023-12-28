@@ -8,8 +8,8 @@ import { Button } from '../ui/button';
 import {
   DropdownMenu,
   DropdownMenuContent,
-  DropdownMenuItem,
   DropdownMenuTrigger,
+  DropdownMenuItem,
 } from '@/components/ui/dropdown-menu';
 
 const ThemeSwitcher = () => {
@@ -28,7 +28,11 @@ const ThemeSwitcher = () => {
           <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
-      <DropdownMenuContent className="dark:bg-black-default" align="center">
+      <DropdownMenuContent
+        defaultValue="system"
+        className="dark:bg-black-default"
+        align="center"
+      >
         <DropdownMenuItem onClick={() => setTheme('light')}>Light</DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('dark')}>Dark</DropdownMenuItem>
         <DropdownMenuItem onClick={() => setTheme('system')}>

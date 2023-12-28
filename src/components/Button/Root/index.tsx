@@ -22,8 +22,9 @@ export const Root = ({
   const classText: Record<TTypeButton, TTypeClassName> = {
     Primary:
       ' border-primary-default hover:bg-primary-default/70 border-primary-default bg-primary-default active:bg-primary-300  ',
-    secondary: ' border-white-default ',
-    disable: ' bg-black-200 border-none cursor-not-allowed hover:scale-100  ',
+    secondary:
+      ' border-primary-default dark:hover:bg-white-default/10 hover:bg-black-default/10 ',
+    disable: ' bg-black-200 border-none cursor-not-allowed   ',
     'success-primary':
       ' bg-interactive-success border-interactive-success hover:bg-interactive-successDefault ',
     'success-secondary':
@@ -39,7 +40,7 @@ export const Root = ({
   return (
     <button
       className={
-        'group/button flex w-full  items-center  justify-center gap-2.5  border   transition-all duration-200  hover:scale-105 active:scale-100 sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-5 lg:py-3 ' +
+        'group/button  flex w-full  items-center  justify-center gap-2.5  border   transition-all duration-200  sm:px-3 sm:py-2 md:px-4 md:py-2.5 lg:px-5 lg:py-3 ' +
         classText[typeButton] +
         full +
         isRounded
