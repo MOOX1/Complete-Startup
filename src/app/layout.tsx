@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import { Inter, Poppins, Rubik } from 'next/font/google';
 import './globals.css';
 import { ThemeProvider } from '@/providers/Theme';
+import { Analytics } from '@vercel/analytics/react';
 
 import { Layout } from '@/components/Layout';
 
@@ -52,6 +53,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             {children}
           </Layout.Root>
         </ThemeProvider>
+        <Analytics />
       </body>
     </html>
   );
